@@ -1,7 +1,7 @@
 var data = {};
 try {
-    data = JSON.parse(localStorage.options);   
-} catch(e){  
+    data = JSON.parse(localStorage.options);
+} catch(e){
 }
 var defaults = {
     lang: ''
@@ -14,7 +14,7 @@ for(var id in defaults){
 
 window.onload = function(){
     var save = document.getElementById('save');
-    var items = document.querySelectorAll('.lang');    
+    var items = document.querySelectorAll('.lang');
     for(var i = 0; i < items.length; i++){
         items[i].textContent = chrome.i18n.getMessage(items[i].id);
     }
@@ -23,7 +23,7 @@ window.onload = function(){
 
     document.getElementById('restore_defaults').addEventListener('click', function(){
         window.localStorage.options = JSON.stringify(defaults);
-        location.reload();       
+        location.reload();
     });
 
     if(options.lang){
@@ -33,7 +33,7 @@ window.onload = function(){
             document.getElementById('lang').value = languages[0].substr(0, 2);
         });
     }
-    
+
     document.getElementById('form').addEventListener('submit', function(e){
         e.preventDefault();
         var data = {
@@ -45,19 +45,9 @@ window.onload = function(){
         save.value = chrome.i18n.getMessage('saved');
         return false;
     });
-    
+
     document.getElementById('form').addEventListener('change', function(){
         save.className = '';
         save.value = chrome.i18n.getMessage('save');
     });
 }
-
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-7218577-47']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = 'https://ssl.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();

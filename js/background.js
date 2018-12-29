@@ -7,13 +7,13 @@ function updateOptions(lang){
     }catch(e){
     }
     var defaults = {
-        lang: lang          
+        lang: lang
     };
     for(var key in defaults){
         if(options[key] == undefined){
             options[key] = defaults[key];
         }
-    }		
+    }
 }
 
 chrome.i18n.getAcceptLanguages(function(languages) {
@@ -25,10 +25,10 @@ chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
         currentRequest.onreadystatechange = null;
         currentRequest.abort();
         currentRequest = null;
-    }        
+    }
 
     updateDefaultSuggestion(text);
-    
+
     if(text.length > 0){
         currentRequest = suggests(text, function(data) {
             var results = [];
@@ -43,11 +43,11 @@ chrome.omnibox.onInputChanged.addListener(function(text, suggest) {
             suggest(results);
         });
     } else {
-     
+
     }
 });
 
-function resetDefaultSuggestion() {      
+function resetDefaultSuggestion() {
     chrome.omnibox.setDefaultSuggestion({
         description: ' '
     });
@@ -55,11 +55,11 @@ function resetDefaultSuggestion() {
 
 resetDefaultSuggestion();
 var searchLabel = chrome.i18n.getMessage('search_label');
-function updateDefaultSuggestion(text) {      
+function updateDefaultSuggestion(text) {
     chrome.omnibox.setDefaultSuggestion({
         description: searchLabel + ': %s'
     });
-   
+
 }
 
 chrome.omnibox.onInputStarted.addListener(function() {
@@ -73,11 +73,11 @@ chrome.omnibox.onInputCancelled.addListener(function() {
 
 function suggests(query, callback) {
     var req = new XMLHttpRequest();
-  
+
     req.open("GET", "https://" + options.lang + ".wikipedia.org/w/api.php?action=opensearch&namespace=0&suggest=&search=" + query, true);
     req.onload = function(){
         if(this.status == 200){
-            try{                  
+            try{
                 callback(JSON.parse(this.responseText));
             }catch(e){
                 this.onerror();
@@ -95,13 +95,3 @@ function suggests(query, callback) {
 chrome.omnibox.onInputEntered.addListener(function(text) {
     chrome.tabs.update(null, {url: "https://" + options.lang + ".wikipedia.org/w/index.php?search=" + text});
 });
-
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-7218577-47']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = 'https://ssl.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
