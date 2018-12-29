@@ -1,9 +1,3 @@
-/*
-
-Sticky Footer by Ryan Fait
-http://ryanfait.com/
-
-*/
 html, body {
     height: 100%;
 }
@@ -16,7 +10,7 @@ html, body {
     margin-left: auto;
     margin-bottom: -140px;
 }
-#footer, #push {
+#push {
     height: 140px;
     clear: both;
 }
@@ -110,24 +104,6 @@ div.help-box {
 }
 #buttons {
     margin-bottom: 20px;
-}
-#footer{   
-    width: auto;    
-    background: #000;    
-}
-#logo{
-    display: block;
-    width: 91px;
-    height: 100px;
-    background: url(../img/logo.png) no-repeat;
-    text-indent: -5000px;
-    margin: 0 auto;
-}
-#inFooter{
-    width: 960px;
-    margin: 0 auto;
-    height: 120px;
-    padding-top: 20px;
 }
 
 #save.saved{

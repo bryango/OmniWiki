@@ -74,7 +74,7 @@ chrome.omnibox.onInputCancelled.addListener(function() {
 function suggests(query, callback) {
     var req = new XMLHttpRequest();
   
-    req.open("GET", "http://" + options.lang + ".wikipedia.org/w/api.php?action=opensearch&namespace=0&suggest=&search=" + query, true);
+    req.open("GET", "https://" + options.lang + ".wikipedia.org/w/api.php?action=opensearch&namespace=0&suggest=&search=" + query, true);
     req.onload = function(){
         if(this.status == 200){
             try{                  
@@ -93,7 +93,7 @@ function suggests(query, callback) {
 }
 
 chrome.omnibox.onInputEntered.addListener(function(text) {
-    chrome.tabs.update(null, {url: "http://" + options.lang + ".wikipedia.org/w/index.php?search=" + text});
+    chrome.tabs.update(null, {url: "https://" + options.lang + ".wikipedia.org/w/index.php?search=" + text});
 });
 
 var _gaq = _gaq || [];
