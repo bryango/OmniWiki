@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
 }
+
 #wrap {
     min-height: 100%;
     height: auto !important;
@@ -10,75 +11,92 @@ html, body {
     margin-left: auto;
     margin-bottom: -140px;
 }
+
 #push {
     height: 140px;
     clear: both;
 }
 
-body{
+body {
     font-family: sans-serif;
     line-height: 30px;
-    margin: 0!important;
+    margin: 0 !important;
 }
+
 #main {
     width: 400px;
     margin: 0 auto;
     padding-top: 21px;
 }
-h1{
+
+h1 {
     background: url(../img/48.png) no-repeat;
     padding-left: 60px;
     height: 43px;
     margin-top: 0;
     padding-top: 7px;
 }
-legend, #test, #save{
+
+legend, #test, #save {
     font-weight: bolder;
     font-size: 18px;
     color: #5959ff;
 }
-fieldset{
+
+fieldset {
     padding: 10px 15px 20px 15px;
     border: 1px solid #000;
 }
-div.hr{
+
+div.hr {
     margin: 18px 0;
     border-top: 1px solid #000;
 }
+
 input[type="radio"] {
     margin-left: 20px;
 }
+
 input[type="radio"] {
     margin-left: 20px;
 }
+
 .bold, span.help {
     font-weight: bolder;
 }
+
 span.help {
     float: right;
     color: #5959ff;
 }
-span.help:hover{
+
+span.help:hover {
     color: #000;
     cursor: pointer;
 }
+
 .margin {
     margin-left: 20px;
 }
-#test{
+
+#test {
     text-decoration: none;
     margin-top: 20px;
     display: inline-block;
 }
-#test:hover{
+
+#test:hover {
     color: #000;
 }
+
 input.format {
     width: 220px;
 }
+
 div.help-box {
     display: none;
 }
+
 #save {
     float: right;
     width: 130px;
@@ -88,10 +106,12 @@ div.help-box {
     border: none;
     margin: 20px 2px 0 0;
 }
-#save:hover{
+
+#save:hover {
     background: #000;
     cursor: pointer;
 }
+
 #restore_defaults {
     margin: 25px 0 0 1px;
     font-weight: bolder;
@@ -99,16 +119,18 @@ div.help-box {
     float: left;
     cursor: pointer;
 }
+
 #restore_defaults:hover {
     color: #000;
 }
+
 #buttons {
     margin-bottom: 20px;
 }
 
-#save.saved{
+#save.saved {
     background: url(../img/check.png) no-repeat left center;
-    color: #000!important;
+    color: #000 !important;
     font-weight: bold;
     padding-left: 35px;
     cursor: default;

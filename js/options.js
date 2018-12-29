@@ -1,32 +1,31 @@
 var data = {};
 try {
     data = JSON.parse(localStorage.options);
-} catch(e){
-}
+} catch (e) {}
 var defaults = {
     lang: ''
 };
 
 var options = {};
-for(var id in defaults){
+for (var id in defaults) {
     options[id] = data[id] === undefined ? defaults[id] : data[id];
 }
 
-window.onload = function(){
+window.onload = function() {
     var save = document.getElementById('save');
     var items = document.querySelectorAll('.lang');
-    for(var i = 0; i < items.length; i++){
+    for (var i = 0; i < items.length; i++) {
         items[i].textContent = chrome.i18n.getMessage(items[i].id);
     }
 
     save.value = chrome.i18n.getMessage('save');
 
-    document.getElementById('restore_defaults').addEventListener('click', function(){
+    document.getElementById('restore_defaults').addEventListener('click', function() {
         window.localStorage.options = JSON.stringify(defaults);
         location.reload();
     });
 
-    if(options.lang){
+    if (options.lang) {
         document.getElementById('lang').value = options.lang;
     } else {
         chrome.i18n.getAcceptLanguages(function(languages) {
@@ -34,7 +33,7 @@ window.onload = function(){
         });
     }
 
-    document.getElementById('form').addEventListener('submit', function(e){
+    document.getElementById('form').addEventListener('submit', function(e) {
         e.preventDefault();
         var data = {
             lang: document.getElementById('lang').value
@@ -46,7 +45,7 @@ window.onload = function(){
         return false;
     });
 
-    document.getElementById('form').addEventListener('change', function(){
+    document.getElementById('form').addEventListener('change', function() {
         save.className = '';
         save.value = chrome.i18n.getMessage('save');
     });
