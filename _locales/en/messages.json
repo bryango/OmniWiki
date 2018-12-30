@@ -1,7 +1,7 @@
 {
   "extension_description": {
     "message": "Add Wikipedia suggestions and search results to Omnibox. Just type 'wiki' and hit TAB or spacebar."
-  },  
+  },
   "options_title": {
     "message": "OmniWiki options"
   },
@@ -9,7 +9,7 @@
     "message": "Omnibox suggestions"
   },
   "language": {
-    "message": "Language"
+    "message": "Preferred Language"
   },
   "save": {
     "message": "Save"
@@ -22,5 +22,5 @@
   },
   "restore_defaults": {
     "message": "Restore defaults"
-  }  
+  }
 }

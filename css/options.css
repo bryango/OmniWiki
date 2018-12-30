@@ -137,6 +137,11 @@ div.help-box {
     cursor: default;
 }
 
+#langs_list {
+    font-family: monospace;
+    line-height: normal;
+}
+
 fieldset, #lang {
     text-align: center;
 }
