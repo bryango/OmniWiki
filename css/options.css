@@ -19,6 +19,7 @@ html, body {
 
 body {
     font-family: sans-serif;
+    font-size: medium;
     line-height: 30px;
     margin: 0 !important;
 }
@@ -134,4 +135,12 @@ div.help-box {
     font-weight: bold;
     padding-left: 35px;
     cursor: default;
+}
+
+fieldset, #lang {
+    text-align: center;
+}
+
+legend {
+    text-align: left;
 }

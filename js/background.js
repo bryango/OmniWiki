@@ -1,15 +1,15 @@
 var options = {};
 var currentRequest = null;
 
-function updateOptions(lang) {
+function updateOptions(default_lang) {
     try {
         options = JSON.parse(localStorage.options);
     } catch (e) {}
     var defaults = {
-        lang: lang
+        lang: default_lang
     };
     for (var key in defaults) {
-        if (options[key] == undefined) {
+        if (options[key] == undefined && defaults[key]) {
             options[key] = defaults[key];
         }
     }

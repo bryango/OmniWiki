@@ -20,10 +20,13 @@ window.onload = function() {
 
     save.value = chrome.i18n.getMessage('save');
 
-    document.getElementById('restore_defaults').addEventListener('click', function() {
-        window.localStorage.options = JSON.stringify(defaults);
-        location.reload();
-    });
+    document.getElementById('restore_defaults').addEventListener(
+        'click',
+        function() {
+            window.localStorage.options = JSON.stringify(defaults);
+            location.reload();
+        }
+    );
 
     if (options.lang) {
         document.getElementById('lang').value = options.lang;

@@ -1,5 +1,5 @@
 {
-  "name": "OmniWiki",
+  "name": "OmniWiki Extra",
   "version": "0.2",
   "manifest_version": 2,
   "description": "__MSG_extension_description__",
@@ -7,10 +7,11 @@
     "scripts": ["js/background.js"]
   },
   "omnibox": {
-    "keyword": "wiki"
+    "keyword": "w"
   },
   "permissions": [
-    "https://*.wikipedia.org/*"
+    "https://*.wikipedia.org/*",
+    "https://*.wikimedia.org/*"
   ],
   "icons": {
       "16": "img/16.png",
@@ -19,6 +20,5 @@
   },
   "minimum_chrome_version": "18",
   "options_page": "options.html",
-  "content_security_policy": "script-src 'self'; object-src 'self'",
   "default_locale": "en"
 }
