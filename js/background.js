@@ -31,7 +31,9 @@ function processInput(text) {
         currentLang = words[0];
         return words.slice(1).join(' ');
     } else {
-        currentLang = options.lang;
+        if (!options.validLangs.includes(currentLang)) {
+            currentLang = options.lang;
+        }
         return text;
     }
 }
@@ -116,6 +118,7 @@ function suggests(query, callback) {
 }
 
 chrome.omnibox.onInputEntered.addListener(function(text) {
+    text = processInput(text);
     chrome.tabs.update(null, {
         url: "https://" + currentLang + ".wikipedia.org/w/index.php?search=" + text
     });
