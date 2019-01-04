@@ -27,7 +27,7 @@ function updateOptions(updated_lang) {
 
 function processInput(text) {
     words = text.split(/[ \t]+/).filter(entry => entry != '');
-    if (options.validLangs.includes(words[0])) {
+    if (words.length > 1 && options.validLangs.includes(words[0])) {
         currentLang = words[0];
         return words.slice(1).join(' ');
     } else {
@@ -122,4 +122,5 @@ chrome.omnibox.onInputEntered.addListener(function(text) {
     chrome.tabs.update(null, {
         url: "https://" + currentLang + ".wikipedia.org/w/index.php?search=" + text
     });
+    currentLang = ''
 });
